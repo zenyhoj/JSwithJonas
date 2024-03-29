@@ -46,6 +46,10 @@ const restaurant = {
   },
 };
 
+// array destructuring
+const [main, secondary, third] = restaurant.starterMenu;
+console.log(restaurant.orderMenu(main, secondary));
+
 // Destructured restaurant object
 const {
   name,
@@ -54,9 +58,6 @@ const {
   },
 } = restaurant;
 
-const [main, secondary, third] = restaurant.starterMenu;
-console.log(restaurant.orderMenu(main, secondary));
-
 // Object that can be passed on to the orderDelivery method
 restaurant.orderDelivery({
   name: name,
@@ -64,5 +65,3 @@ restaurant.orderDelivery({
   orderName: main,
   address: "Rizal",
 });
-
-// Object destructuring
