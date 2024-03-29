@@ -1,0 +1,13 @@
+ul {
+  list-style-type: disc;
+}
+
+li::marker {
+  color: rebeccapurple;
+}
+
+table {
+  /* border-collapse: collapse; */
+
+  border: 1px solid black;
+}
