@@ -66,7 +66,7 @@ restaurant.orderDelivery({
   address: "Rizal",
 });
 
-// Spread Operator: can be used in all iterables except Objects
+// Spread Operator: can be used in all iterables
 // can be used when building an array or pass values into a function
 
 const mainMenu = [...restaurant.starterMenu];
@@ -76,3 +76,11 @@ console.log(menu);
 const string = "Joe Balingit";
 const strCount = [...string].length;
 console.log(strCount);
+
+// Modifying an Object property by shallow copying the original object
+const restaurantCopy = { ...restaurant };
+restaurantCopy.name = "Joe Restaurant";
+restaurantCopy.openingHours = { mon: { open: "9:00", close: "12:00" } };
+
+console.log(restaurantCopy.openingHours);
+console.log(restaurant.openingHours);
