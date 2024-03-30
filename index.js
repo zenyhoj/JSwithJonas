@@ -58,7 +58,7 @@ const {
   },
 } = restaurant;
 
-// Object that can be passed on to the orderDelivery method
+// {Object} as arguments that can be passed on to the orderDelivery method
 restaurant.orderDelivery({
   name: name,
   time: "9:00 PM",
