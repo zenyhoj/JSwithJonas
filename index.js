@@ -65,3 +65,14 @@ restaurant.orderDelivery({
   orderName: main,
   address: "Rizal",
 });
+
+// Spread Operator: can be used in all iterables except Objects
+// can be used when building an array or pass values into a function
+
+const mainMenu = [...restaurant.starterMenu];
+const menu = [...mainMenu, ...restaurant.starterMenu];
+console.log(menu);
+
+const string = "Joe Balingit";
+const strCount = [...string].length;
+console.log(strCount);
