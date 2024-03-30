@@ -30,6 +30,8 @@ const restaurant = {
   starterMenu: ["Pizza", "Burreto", "Italian Veggie"],
   openingHours: {
     mon: { open: "8:00", close: "23:00" },
+    tue: { open: "8:00", close: "23:00" },
+    sat: { open: "10:00", close: "24:00" },
   },
   orderMenu: function (starterIndex, SecondaryIndex) {
     return ` ${starterIndex} ${SecondaryIndex}`;
@@ -66,9 +68,8 @@ restaurant.orderDelivery({
   address: "Rizal",
 });
 
-// Spread Operator: can be used in all iterables
+// SPREAD Operator: can be used in all iterables
 // can be used when building an array or pass values into a function
-
 const mainMenu = [...restaurant.starterMenu];
 const menu = [...mainMenu, ...restaurant.starterMenu];
 console.log(menu);
@@ -84,3 +85,23 @@ restaurantCopy.openingHours = { mon: { open: "9:00", close: "12:00" } };
 
 console.log(restaurantCopy.openingHours);
 console.log(restaurant.openingHours);
+
+// REST operator: can be use in destructuring
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(weekdays);
+
+// REST used in the function
+const add = function (...numbers) {
+  console.log(
+    numbers.reduce((sum, currentValue) => {
+      return sum + currentValue;
+    }, 0)
+  );
+};
+
+add(1, 2, 3);
+add(2, 5, 6, 7, 8, 9);
+add(12, 20, 90, 80, 70, 100, 900, 80, 20, 100, 30);
+
+const x = [2, 4, 56];
+add(...x);
